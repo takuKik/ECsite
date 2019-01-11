@@ -46,6 +46,7 @@ group :development, :test do
   gem 'spring-commands-rspec'
   gem 'rails-controller-testing'
   gem 'factory_bot_rails'
+  gem 'capybara', '~> 2.15.2'
   gem 'pry-rails'
   gem 'pry-doc'
   gem 'pry-byebug'
