@@ -70,7 +70,6 @@
               </ul>
               <div class="tab-content">
                 <div id="details" class="tab-pane fade in active">
-                  <p><%= @product.description %></p>
                   <ul class="list-unstyled">
                     <% @product.product_properties.each do |property| %>
                       <li><%= "#{property.property.presentation} ： #{property.value}" %></li>
@@ -78,13 +77,15 @@
                   </ul>
                 </div>
                 <div id="about-art" class="tab-pane fade">
-                  <p>Nulla facilisi. Mauris efficitur, massa et iaculis accumsan, mauris velit ultrices purus, quis condimentum nibh dolor ut tortor. Donec egestas tortor quis mattis gravida. Ut efficitur elit vitae dignissim volutpat. </p>
+                  <p><%= @product.description %></p>
                 </div>
                 <div id="sizing" class="tab-pane fade">
-                  <p>Praesent dui felis, gravida a auctor at, facilisis commodo ipsum. Cras eu faucibus justo. Nullam varius cursus nisi, sed elementum sem sagittis at. Nulla tellus massa, vestibulum a commodo facilisis, pulvinar convallis nunc.</p>
+                  <p><%= @product.property(:size) %></p>
                 </div>
                 <div id="shipping" class="tab-pane fade">
-                  <p>Mauris lobortis augue ex, ut faucibus nisi mollis ac. Sed volutpat scelerisque ex ut ullamcorper. Cras at velit quis sapien dapibus laoreet a id odio. Sed sit amet accumsan ante, eu congue metus. Aenean eros tortor, cursus quis feugiat sed, vestibulum vel purus.</p>
+                  <% @product.shipping_category.shipping_methods.each do |ship| %>
+                  <li><%= ship.name %></li>
+                  <% end %>
                 </div>
               </div>
             </div>
