@@ -1,3 +1,3 @@
 <% provide(:title, @product.name) %>
-<%= render "light_section" %>
-<%= render "main_content_section" %>
+<%= render partial: "light_section", locals: { product: @product } %>
+<%= render partial: "main_content_section", locals: { product: @product } %>

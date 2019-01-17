@@ -7,7 +7,7 @@
           <div class="media-left productSlider">
             <div id="carousel" class="carousel slide" data-ride="carousel">
               <div class="carousel-inner">
-                <% @product.images.each_with_index do |image, i| %>
+                <% product.images.each_with_index do |image, i| %>
                   <div class="item <%= "active" if i.zero? %>" data-thumb="<%= i %>">
                     <%= image_tag image.attachment(:large) %>
                   </div>
@@ -17,8 +17,8 @@
             <div class="clearfix">
               <div id="thumbcarousel" class="carousel slide" data-interval="false">
                 <div class="carousel-inner">
-                  <% if @product.images.present? %>
-                    <% @product.images.each_with_index do |image, i| %>
+                  <% if product.images.present? %>
+                    <% product.images.each_with_index do |image, i| %>
                       <div data-target="#carousel" data-slide-to="<%= i %>" class="thumb">
                         <%= image_tag image.attachment(:small) %>
                       </div>
@@ -39,9 +39,9 @@
               <li><a href="product_grid_left_sidebar.html"><i class="fa fa-reply" aria-hidden="true"></i>一覧ページへ戻る</a></li>
               <!-- <li><a href="#"><i class="fa fa-plus" aria-hidden="true"></i>Share This</a></li> -->
             </ul>
-            <h2><%= @product.name %></h2>
-            <h3><%= @product.display_price %></h3>
-            <p><%= @product.description %></p>
+            <h2><%= product.name %></h2>
+            <h3><%= product.display_price %></h3>
+            <p><%= product.description %></p>
             <span class="quick-drop">
               <select name="guiest_id3" id="guiest_id3" class="select-drop">
                 <option value="0">S</option>
@@ -64,26 +64,26 @@
             <div class="tabArea">
               <ul class="nav nav-tabs">
                 <li class="active"><a data-toggle="tab" href="#details">details</a></li>
-                <li><a data-toggle="tab" href="#about-art">about art</a></li>
+                <li><a data-toggle="tab" href="#about-art">about</a></li>
                 <li><a data-toggle="tab" href="#sizing">sizing</a></li>
                 <li><a data-toggle="tab" href="#shipping">shipping</a></li>
               </ul>
               <div class="tab-content">
                 <div id="details" class="tab-pane fade in active">
                   <ul class="list-unstyled">
-                    <% @product.product_properties.each do |property| %>
+                    <% product.product_properties.each do |property| %>
                       <li><%= "#{property.property.presentation} ： #{property.value}" %></li>
                     <% end %>
                   </ul>
                 </div>
                 <div id="about-art" class="tab-pane fade">
-                  <p><%= @product.description %></p>
+                  <p><%= product.description %></p>
                 </div>
                 <div id="sizing" class="tab-pane fade">
-                  <p><%= @product.property(:size) %></p>
+                  <p><%= product.property(:size) %></p>
                 </div>
                 <div id="shipping" class="tab-pane fade">
-                  <% @product.shipping_category.shipping_methods.each do |ship| %>
+                  <% product.shipping_category.shipping_methods.each do |ship| %>
                   <li><%= ship.name %></li>
                   <% end %>
                 </div>
