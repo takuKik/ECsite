@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Potepan::ProductsController, type: :controller do
   describe "GET #show" do
-    let(:product) { create(:product, sku: "RUB-00001") }
+    let(:product) { create(:product) }
 
     before do
       get :show, params: { id: product.id }
