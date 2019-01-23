@@ -8,8 +8,8 @@ RSpec.describe Potepan::ProductsController, type: :controller do
       get :show, params: { id: product.id }
     end
 
-    it "returns a 200 response" do
-      expect(response).to have_http_status 200
+    it 'has a 200 status code' do
+      expect(response).to have_http_status(:ok)
     end
 
     it "renders a correct page" do
