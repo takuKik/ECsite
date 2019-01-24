@@ -12,6 +12,7 @@
 /tmp/*
 !/log/.gitkeep
 !/tmp/.gitkeep
+bin/
 
 /node_modules
 /yarn-error.log
