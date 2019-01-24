@@ -12,7 +12,6 @@
 /tmp/*
 !/log/.gitkeep
 !/tmp/.gitkeep
-bin/
 
 /node_modules
 /yarn-error.log
@@ -151,6 +150,8 @@ flycheck_*.el
 # directory configuration
 .dir-locals.el
 
+# binフォルダを除外
+.bin/
 
 ### https://raw.github.com/github/gitignore/515d7fcbbab869614a342a29c56d2010b7d8576d/Global/JetBrains.gitignore
 
