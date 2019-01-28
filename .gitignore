@@ -151,7 +151,7 @@ flycheck_*.el
 .dir-locals.el
 
 # binフォルダを除外
-.bin/
+bin/
 
 ### https://raw.github.com/github/gitignore/515d7fcbbab869614a342a29c56d2010b7d8576d/Global/JetBrains.gitignore
 

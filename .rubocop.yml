@@ -1,26 +1,12 @@
 inherit_from:
   - .rubocop_airbnb.yml
 
-Rails:
-  Enabled: true
-
-# 自動生成されるものはチェック対象から除外する
 AllCops:
   Exclude:
-    - db/schema.rb
-    - db/seeds.rb
-    - db/migrate/*
-    - bin/*
-    - config/environments/*
-
-# 日本語のコメントを許可する
-Style/AsciiComments:
-  Enabled: false
-
-#最大文字数
-Metrics/LineLength:
-  Max: 160
-
-#app/helper/pplication_helper.rbにてpage_titleを使う
-Airbnb/OptArgParameters:
-  Enabled: false
+    - 'bin/**/*'
+    - 'vendor/**/*'
+    - 'db/**/*'
+    - 'lib/**/*'
+    - 'tmp/**/*'
+    - 'config/**/*'
+    - 'spec/spec_helper.rb'
