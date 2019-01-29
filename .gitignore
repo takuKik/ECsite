@@ -150,7 +150,7 @@ flycheck_*.el
 # directory configuration
 .dir-locals.el
 
-# bin/rails以外を除外
+# bin/bundle, bin/rspec, bin/springを除外
 /bin/*
 !/bin/rails
 !/bin/rake
