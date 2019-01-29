@@ -153,6 +153,10 @@ flycheck_*.el
 # bin/rails以外を除外
 /bin/*
 !/bin/rails
+!/bin/rake
+!/bin/setup
+!/bin/update
+!/bin/yarn
 
 # Dockerfile.devを除外
 /Dockerfile.dev
