@@ -150,8 +150,12 @@ flycheck_*.el
 # directory configuration
 .dir-locals.el
 
-# binフォルダを除外
-bin/
+# bin/rails以外を除外
+/bin/*
+!/bin/rails
+
+# Dockerfile.devを除外
+/Dockerfile.dev
 
 ### https://raw.github.com/github/gitignore/515d7fcbbab869614a342a29c56d2010b7d8576d/Global/JetBrains.gitignore
 
