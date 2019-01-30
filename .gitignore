@@ -150,16 +150,14 @@ flycheck_*.el
 # directory configuration
 .dir-locals.el
 
-# bin/bundle, bin/rspec, bin/springを除外
+# bin/rspec, bin/springを除外
 /bin/*
+!/bin/bundle
 !/bin/rails
 !/bin/rake
 !/bin/setup
 !/bin/update
 !/bin/yarn
-
-# Dockerfile.devを除外
-/Dockerfile.dev
 
 ### https://raw.github.com/github/gitignore/515d7fcbbab869614a342a29c56d2010b7d8576d/Global/JetBrains.gitignore
 
