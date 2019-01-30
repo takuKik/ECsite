@@ -152,7 +152,6 @@ flycheck_*.el
 
 # bin/rspec, bin/springを除外
 /bin/*
-!/bin/bundle
 !/bin/rails
 !/bin/rake
 !/bin/setup
