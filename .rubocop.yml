@@ -10,3 +10,6 @@ AllCops:
     - 'tmp/**/*'
     - 'config/**/*'
     - 'spec/spec_helper.rb'
+
+Metrics/LineLength:
+  Max: 150

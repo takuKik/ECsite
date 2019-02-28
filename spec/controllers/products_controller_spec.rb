@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe Potepan::ProductsController, type: :controller do
   describe "GET #show" do
-    let!(:taxon1) { create(:taxon, name: "bags") }
-    let!(:taxon2) { create(:taxon, name: "rails") }
-    let!(:product) { create(:product, taxons: [taxon1, taxon2], name: "rails_tote") }
+    let!(:taxon1) { create(:taxon, name: "brand") }
+    let!(:taxon2) { create(:taxon, name: "clothing") }
+    let!(:product) { create(:product, taxons: [taxon1, taxon2], name: "tote") }
 
     before do
       get :show, params: { id: product.id }
@@ -24,10 +24,10 @@ RSpec.describe Potepan::ProductsController, type: :controller do
 
     context "Test related products" do
       let!(:related_products) { create_list(:product, 4, taxons: [taxon2]) }
-      let!(:unrelated_product) { create(:product, name: "apache_jersey") }
+      let!(:unrelated_product) { create(:product, name: "shirt") }
 
       it "Assignment of @related_products" do
-          expect(assigns(:related_products)).to match_array(related_products)
+        expect(assigns(:related_products)).to match_array(related_products)
       end
 
       it "Hide non relevant items" do
@@ -39,7 +39,7 @@ RSpec.describe Potepan::ProductsController, type: :controller do
       end
 
       context "There are 5 or more related products" do
-        let!(:related_product) { create(:product, taxons: [taxon1, taxon2], name: "rails_bag") }
+        let!(:related_product) { create(:product, taxons: [taxon1, taxon2], name: "rails") }
 
         it "Up to 4 related items display" do
           expect(assigns(:related_products).size).to eq 4
